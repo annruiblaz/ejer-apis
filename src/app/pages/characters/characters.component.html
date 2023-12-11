@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 my-2" *ngFor="let psj of infoPersonajes">
+      <div class="card border-primary">
+        <img class="img-thumbnail rounded-circle" [src]="psj.img_url">
+
+        <div class="card-header border-primary">
+
+          <h2 class="text-center">{{psj.name}}</h2>
+        </div>
+        <div class="card-body">
+          <h6><b>Status: </b></h6>
+          <p>{{psj.status}}</p>
+
+          <h6><b>Species: </b></h6>
+          <p>{{psj.species}}</p>
+
+          <h6><b>Gender: </b></h6>
+          <p>{{psj.gender}}</p>
+
+          <h6><b>Hair: </b></h6>
+          <p>{{psj.hair}}</p>
+
+          <h6><b>Origin: </b></h6>
+          <p>{{psj.origin}}</p>
+
+          <h6><b>Abilities: </b></h6>
+          <ul *ngFor="let ability of psj.abilities">
+            <li>{{ability}}</li>
+          </ul>
+
+          <h6><b>Alias: </b></h6>
+          <ul  *ngFor="let alias of psj.alias">
+            <li>{{alias}}</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

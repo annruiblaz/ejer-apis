@@ -1,0 +1,11 @@
+.container{
+  margin-top: 50px;
+}
+.img-thumbnail{
+  width: 250px;
+  height: 250px;
+  align-self: center;
+}
+h6,h2{
+  color: #0A3622FF;
+}

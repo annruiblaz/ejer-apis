@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 my-2" *ngFor="let weapon of infoArmas">
+      <div class="card border-success">
+        <div class="card-header border-success">
+          <img class="img-thumbnail align-items-center" [src]="weapon.assets?.icon">
+          <h2 class="text-center">{{weapon.name}}</h2>
+        </div>
+        <div class="card-body">
+          <div>
+            <h6><b>Type:</b></h6>
+            <p>{{weapon.type}}</p>
+          </div>
+
+          <div *ngIf="weapon.rarity">
+            <h6><b>Rarity:</b></h6>
+            <p>{{weapon.rarity}}</p>
+          </div>
+
+          <div>
+            <h6><b>Damage type:</b></h6>
+            <p>{{weapon.damageType}}</p>
+          </div>
+
+          <div>
+            <h6><b>Attack:</b></h6>
+            <p>Display: {{weapon.attack.display}} | Raw: {{weapon.attack.raw}}</p>
+          </div>
+
+          <div *ngIf="weapon.ammo">
+            <h6><b>Ammo:</b></h6>
+            <p>{{weapon.ammo}}</p>
+          </div>
+
+          <div *ngIf="weapon.specialAmmo">
+            <h6><b>Special Ammo:</b></h6>
+            <p>{{weapon.specialAmmo}}</p>
+          </div>
+
+          <div *ngIf="weapon.attributes">
+            <h6><b>Attributes:</b></h6>
+            <ul>
+              <li>Affinity: {{weapon.attributes.affinity}}</li>
+              <li *ngIf="weapon.attributes.defense">Defense: {{weapon.attributes.defense}}</li>
+              <li *ngIf="weapon.attributes.boostType">Boost type: {{weapon.attributes.boostType}}</li>
+              <li *ngIf="weapon.attributes.damageType">Damage type: {{weapon.attributes.damageType}}</li>
+              <li *ngIf="weapon.attributes.coatings">Coatings: {{weapon.attributes.coatings}}</li>
+              <li *ngIf="weapon.attributes.elderseal">Elderseal: {{weapon.attributes.elderseal}}</li>
+            </ul>
+          </div>
+
+          <div>
+            <h6><b>Is Crafteable:</b></h6>
+            <p>{{weapon.crafting.craftable ? ' Yes' : ' No'}}</p>
+            <div *ngIf="weapon.crafting.craftable">
+              <h6><b>Crafting materials:</b></h6>
+              <ul *ngFor="let craft of weapon.crafting.craftingMaterials">
+                <li>{{craft.item.name}} | Quantity: {{craft.quantity.toLocaleString()}}</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

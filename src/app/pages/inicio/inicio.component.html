@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div *ngIf="infoPokemon">
+    <div class="card col-3 align-items-center border-warning-subtle"  *ngFor="let poke of infoPokemon.data" >
+      <img class="img-thumbnail" [src]="poke.images.small"  alt="">
+      <div class="card-body">
+        <button type="button" class="btn btn-outline-warning" routerLink="/cards" >Ir a Pokemón</button>
+      </div>
+    </div>
+ </div>
+
+
+ <div *ngIf="infoPersonajes">
+   <div class="card col-3 align-items-center border-primary">
+     <img class="img-thumbnail" [src]="infoPersonajes[1].img_url"  alt="">
+     <div class="card-body">
+       <button type="button" class="btn btn-primary" routerLink="/characters" >Ir a Personajes</button>
+     </div>
+   </div>
+ </div>
+
+
+<div *ngIf="infoAgentes">
+    <div class="card border-black">
+      <img class="card col-3 align-items-center" [src]="infoAgentes.data[1].displayIcon"  alt="{{infoAgentes.data[1].displayIcon}}">
+      <div class="card-body">
+        <button type="button" class="btn btn-dark text-white" routerLink="/agents" >Ir a Agentes</button>
+      </div>
+    </div>
+</div>
+
+ <div *ngIf="infoArmas">
+   <div class="card border-success">
+     <img class="card col-3 align-items-center" [src]="infoArmas[0].assets?.icon" >
+     <div class="card-body">
+       <button type="button" class="btn btn-success" routerLink="/weapons" >Ir a Weapons</button>
+     </div>
+   </div>
+</div>
+
+</div>

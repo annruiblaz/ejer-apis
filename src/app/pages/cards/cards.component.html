@@ -1,0 +1,68 @@
+<div class="container">
+
+<div class="row ">
+  <div class="card mt-2 col-5 m-1 border-warning-subtle" *ngFor="let pokemon of infoPokemon.data">
+    <div class="row">
+      <div class="col-6">
+        <img class="img-fluid" [src]="pokemon.images.small">
+      </div>
+
+      <div class="col-6">
+        <div class="card-header border-warning-subtle bg-white">
+          <h2 class="text-center ">{{pokemon.name}}</h2>
+        </div>
+
+        <div class="card-body">
+          <div class="">
+            <h6 class=""><b>Hp: </b></h6>
+            <p>{{pokemon.hp}}</p>
+          </div>
+
+          <div class="">
+            <h6 class=""><b>Types: </b></h6>
+            <ul class="list-unstyled" *ngFor="let types of pokemon.types">
+              <li>{{types}}</li>
+            </ul>
+          </div>
+
+          <div class="">
+            <h6 class=""><b>Attacks: </b></h6>
+            <ul class="list-unstyled" *ngFor="let attack of pokemon.attacks">
+              <li>
+                <p>{{attack.name}}</p>
+                <p>Damage:  {{attack.damage}} | Energy cost:  {{attack.convertedEnergyCost}}</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="">
+            <h6 class=""><b>Weaknesses: </b></h6>
+            <ul class="list-unstyled" *ngFor="let weak of pokemon.weaknesses">
+              <li>
+                <p>{{weak.type}} | {{weak.value}}</p>
+              </li>
+            </ul>
+          </div>
+          <div class="" *ngIf="pokemon.level">
+            <h6 class="" ><b>Level: </b></h6>
+            <p>{{pokemon.level}}</p>
+          </div>
+
+          <div class="" *ngIf="pokemon.evolvesTo">
+            <h6 class=""><b>Evolves to: </b></h6>
+            <p>{{pokemon.evolvesTo}}</p>
+          </div>
+
+          <div class="" *ngIf="pokemon.evolvesFrom">
+            <h6 class=""><b>Evolves from: </b></h6>
+            <p>{{pokemon.evolvesFrom}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
